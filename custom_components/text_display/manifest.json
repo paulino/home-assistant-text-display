@@ -1,0 +1,8 @@
+{
+  "domain": "text_display",
+  "name": "Controller for Text LCD Displays",
+  "documentation": "http://localhost",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": []
+}

@@ -1,0 +1,50 @@
+# Configuration example with a mysensors serial gateway
+
+mysensors:
+    gateways:
+        - device: '/dev/ttyUSB0'
+          persistence_file: '/home/hass/.homeassistant/mysensors.json'
+    optimistic: false
+    persistence: true
+    retain: true
+    version: 2.0
+
+
+# This sensor value is sent to display
+sensor:
+    - platform: systemmonitor
+      resources:
+         - type: load_1m
+
+
+# Setup display platform
+text_display:
+  - platform: text_display_mysensors
+    name: Controller display
+    rows: 4
+    cols: 20
+    node_id: 0
+    child_id: 1
+
+
+# Automation example with a clock and CPU load from other sensor
+automation:
+  - alias: display_timer
+    trigger:
+        - platform: time_pattern
+        seconds: 40
+    action:
+        - service: text_display.write_text
+          entity_id: text_display.controller_display
+          data_template:
+                text: "{{'%2.2d'|format(now().hour)}}:{{'%2.2d'|format(now().minute)}}"
+                row: 0
+                col: 15
+
+        - service: text_display.write_text
+          entity_id: text_display.controller_display
+          data_template:
+                text: "Load: {{'%3.3s'|format(states.sensor.load_1m.state)}}"
+                row: 1
+                col: 0
+

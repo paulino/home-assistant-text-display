@@ -1,0 +1,8 @@
+{
+  "domain": "text_display_serial",
+  "name": "RS232 Serial display Protocol",
+  "documentation": "",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": ["pyserial"]
+}

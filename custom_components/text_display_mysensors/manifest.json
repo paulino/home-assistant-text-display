@@ -1,0 +1,11 @@
+{
+  "domain": "text_display_mysensors",
+  "name": "Controller for Text LCD Displays using mysensors",
+  "documentation": "https://blog.20cones.org",
+  "requirements": [],
+  "dependencies": [],
+  "after_dependencies": [
+    "mysensors"
+  ],
+  "codeowners": []
+}
