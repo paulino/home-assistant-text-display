@@ -1,10 +1,10 @@
 # Home Assistant Text Display
 
-Home Assistant text-display is a custom component to allow send text to remote displays. You can send text from HomeAssistant's automations selecting the row and column for the sensors or the messages shown at the display.
+Home Assistant text-display is a custom component to send text to remote displays. You can send text from HomeAssistant's automations selecting the row and column where the text will be printed.
 
-This component adds some services to HomeAssitant and currently supports serial LCD-Displays and remote displays through [MySensors](https://www.mysensors.org/) network
+This component adds some services to HomeAssitant and currently supports serial LCD-Displays and remote displays through [MySensors](https://www.mysensors.org/) network.
 
-The image is an example with a 4 rows LCD-Display showing internal/external temperature/humidity, a clock, de CPU load, CPU temperature and a alarm message. This example is explained below in this Readme
+The image is an example with a 4 rows LCD-Display showing internal/external temperature/humidity, a clock, de CPU load, CPU temperature and a alarm message. This example is explained below in this Readme.
 
 ![Sample overview](doc/serial.jpg)
 

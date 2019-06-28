@@ -1,7 +1,5 @@
-"""
-
+""" LCD Text display integration
    @ TODO: Verify valids CMDS for service
-
 
 """
 import asyncio
@@ -16,7 +14,8 @@ from homeassistant.core import callback
 from homeassistant.helpers.entity import Entity
 from homeassistant.helpers.entity_component import EntityComponent
 from homeassistant.helpers.entity import ToggleEntity
-from homeassistant.helpers.config_validation import PLATFORM_SCHEMA
+from homeassistant.helpers.config_validation import (
+    PLATFORM_SCHEMA, PLATFORM_SCHEMA_BASE)
 from homeassistant.helpers.event import track_time_interval
 
 import homeassistant.helpers.config_validation as cv
