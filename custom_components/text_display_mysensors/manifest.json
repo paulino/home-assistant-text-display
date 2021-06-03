@@ -1,11 +1,13 @@
 {
   "domain": "text_display_mysensors",
   "name": "Controller for Text LCD Displays using mysensors",
+  "version": "1.0",
   "documentation": "https://blog.20cones.org",
   "requirements": [],
   "dependencies": [],
   "after_dependencies": [
     "mysensors"
   ],
-  "codeowners": []
+  "codeowners": [],
+  "iot_class" : "assumed_state"
 }

@@ -8,6 +8,7 @@ import homeassistant.helpers.config_validation as cv
 
 from homeassistant.const import STATE_ON, STATE_OFF
 from homeassistant.components.mysensors.const import MYSENSORS_GATEWAYS
+from homeassistant.components.mysensors.const import DOMAIN as MYSENSORS_DOMAIN
 from homeassistant.components.mysensors.gateway import get_mysensors_gateway
 
 from custom_components.text_display import PLATFORM_SCHEMA
@@ -45,13 +46,14 @@ async def async_setup_platform(
         """ Poll until a mysensors gateway is set """
         tries = 1
         gateways = {}
-        while tries <= 5:
-            _LOGGER.info('Wait for MySensors gateway {}/5'.format(tries))
+        while tries <= 10:
+            _LOGGER.info('Wait for MySensors gateway {}/10'.format(tries))
             tries = tries +1
-            if MYSENSORS_GATEWAYS in hass.data and                 len(hass.data[MYSENSORS_GATEWAYS]) > 0 :
-                gateways = hass.data.get(MYSENSORS_GATEWAYS)
+            if MYSENSORS_GATEWAYS in hass.data[MYSENSORS_DOMAIN] and\
+                     len(hass.data[MYSENSORS_DOMAIN][MYSENSORS_GATEWAYS]) > 0 :
+                gateways = hass.data[MYSENSORS_DOMAIN].get(MYSENSORS_GATEWAYS)
                 break
-            await asyncio.sleep(2)
+            await asyncio.sleep(10)
         else:
             _LOGGER.error('MySensors gateway not found')
             return False

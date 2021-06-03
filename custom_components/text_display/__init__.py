@@ -33,6 +33,7 @@ from homeassistant.const import (
 
 from .const import CONF_ROWS,CONF_COLS,DOMAIN
 
+DOMAIN="text_display"
 _LOGGER = logging.getLogger(__name__)
 
 
